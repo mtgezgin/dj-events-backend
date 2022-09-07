@@ -10,7 +10,7 @@ module.exports = createCoreController("api::event.event", ({ strapi }) => ({
   // Create user event----------------------------------------
   async create(ctx) {
     let entity;
-    ctx.request.body.data.user = ctx.state.user;
+    ctx.request.body.data.user = ctx.state.user.id;
     entity = await super.create(ctx);
     return entity;
   },
